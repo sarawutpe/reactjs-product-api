@@ -24,7 +24,7 @@ const generateRandomId = (length) => {
 
 // Upload Image
 const uploadImage = async (files, doc) => {
-  if (files.image != null) {
+  if (files && files.image) {
     var fileExtention = files.image.name.split(".")[1];
     doc.image = `${generateRandomId(10)}.${fileExtention}`;
     var newpath =
